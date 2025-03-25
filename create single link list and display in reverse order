@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+    int info;
+    struct node *next;
+};
+
+struct node *start = NULL;
+struct node *create(struct node *start);
+void display(struct node *start);
+struct node *reverse(struct node *start);
+
+int main() {
+    start = create(start);
+    display(start);
+    printf("\nReversed List:\n");
+    start = reverse(start);
+    display(start);
+    return 0;
+}
+
+struct node *create(struct node *start) {
+    struct node *new_node, *temp;
+    int val;
+    printf("Enter -1 to stop entering values.\n");
+    while (1) {
+        printf("Enter a value: ");
+        scanf("%d", &val);
+        if (val == -1) break;
+        new_node = (struct node*)malloc(sizeof(struct node));
+        new_node->info = val;
+        new_node->next = NULL;
+        if (start == NULL) {
+            start = new_node;
+        } else {
+            temp = start;
+            while (temp->next != NULL) {
+                temp = temp->next;
+            }
+            temp->next = new_node;
+        }
+    }
+    return start;
+}
+
+void display(struct node *start) {
+    struct node *temp = start;
+    printf("List: ");
+    while (temp != NULL) {
+        printf("%d ", temp->info);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
+struct node *reverse(struct node *start) {
+    struct node *prev = NULL, *current = start, *next_node;
+    while (current != NULL) {
+        next_node = current->next;
+        current->next = prev;
+        prev = current;
+        current = next_node;
+    }
+    return prev;
+}
