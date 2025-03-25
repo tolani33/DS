@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+int main() {
+    int arr1[20], arr2[20], arr3[40];
+    int i, j, k, size1, size2, temp;
+    
+    printf("Enter the array size of array 1: ");
+    scanf("%d", &size1);
+    printf("Enter the elements in array 1:\n");
+    for (i = 0; i < size1; i++) {
+        scanf("%d", &arr1[i]);
+    }
+    
+    printf("Enter the size of array 2: ");
+    scanf("%d", &size2);
+    printf("Enter the elements in array 2:\n");
+    for (j = 0; j < size2; j++) {
+        scanf("%d", &arr2[j]);
+    }
+    
+    for (i = 0; i < size1 - 1; i++) {
+        for (j = 0; j < size1 - i - 1; j++) {
+            if (arr1[j] > arr1[j + 1]) {
+                temp = arr1[j];
+                arr1[j] = arr1[j + 1];
+                arr1[j + 1] = temp;
+            }
+        }
+    }
+    
+    for (i = 0; i < size2 - 1; i++) {
+        for (j = 0; j < size2 - i - 1; j++) {
+            if (arr2[j] > arr2[j + 1]) {
+                temp = arr2[j];
+                arr2[j] = arr2[j + 1];
+                arr2[j + 1] = temp;
+            }
+        }
+    }
+    
+    i = 0;
+    j = 0;
+    k = 0;
+    while (i < size1 && j < size2) {
+        if (arr1[i] < arr2[j]) {
+            arr3[k++] = arr1[i++];
+        } else {
+            arr3[k++] = arr2[j++];
+        }
+    }
+    
+    while (i < size1) {
+        arr3[k++] = arr1[i++];
+    }
+    
+    while (j < size2) {
+        arr3[k++] = arr2[j++];
+    }
+    
+    printf("Merged sorted array:\n");
+    for (k = 0; k < size1 + size2; k++) {
+        printf("%d\n", arr3[k]);
+    }
+    
+    return 0;
+}
