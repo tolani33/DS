@@ -1,0 +1,115 @@
+#include <stdio.h>
+#include <conio.h>
+
+int size, val;
+int arr[20];
+
+void disp(int size);
+void sort(int size);
+void reverse(int size);
+void search(int val, int size);
+
+int main() {
+    int i, ch;
+    printf("Enter the size of array: ");
+    scanf("%d", &size);
+    
+    if (size > 20 || size <= 0) {
+        printf("Invalid size! Maximum allowed size is 20.\n");
+        return 1;
+    }
+    
+    printf("Enter %d elements: ", size);
+    for (i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    do {
+        printf("\n**** Main Menu ****\n");
+        printf("1. Display\n");
+        printf("2. Sorting\n");
+        printf("3. Reverse\n");
+        printf("4. Search\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &ch);
+        
+        switch (ch) {
+            case 1:
+                disp(size);
+                break;
+            case 2:
+                sort(size);
+                break;
+            case 3:
+                reverse(size);
+                break;
+            case 4:
+                printf("Enter value to be searched: ");
+                scanf("%d", &val);
+                search(val, size);
+                break;
+            case 5:
+                printf("Exiting program.\n");
+                break;
+            default:
+                printf("Invalid choice! Please enter a valid option.\n");
+        }
+    } while (ch != 5);
+    
+    getch();
+    return 0;
+}
+
+void search(int val, int size) {
+    int i;
+    for (i = 0; i < size; i++) {
+        if (arr[i] == val) {
+            printf("Value found at position %d.\n", i + 1);
+            return;
+        }
+    }
+    printf("Value not found.\n");
+}
+
+void disp(int size) {
+    int i;
+    printf("Given Array:\n");
+    for (i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+void sort(int size) {
+    int i, j, temp;
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    printf("Sorted Array:\n");
+    for (i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+void reverse(int size) {
+    int i, j, temp;
+    j = size - 1;
+    for (i = 0; i < j; i++, j--) {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    printf("Reversed Array:\n");
+    for (i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
