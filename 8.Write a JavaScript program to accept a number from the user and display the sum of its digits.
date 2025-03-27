@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Digits</title>
+    <script>
+        var n = prompt("Enter the number:", "").trim();
+        var sum = 0;
+
+        if (!isNaN(n) && n !== "") {
+            n = Math.abs(parseInt(n)); // Handle negative numbers
+            while (n > 0) {
+                sum += n % 10;
+                n = Math.floor(n / 10);
+            }
+            document.write("<h2>Sum of digits is: " + sum + "</h2>");
+        } else {
+            document.write("<h2>Please enter a valid number.</h2>");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
