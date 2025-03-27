@@ -1,4 +1,4 @@
-// one.html
+<!one.html>
 
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 </body>
 </html>
 
-//two.html
+<!two.html>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@
 </body>
 </html>
 
-//three.html
+<!three.html>
 
 <!DOCTYPE html>
 <html>
@@ -33,5 +33,26 @@
 </head>
 <body>
     Welcome to Hyperlinks.
+</body>
+</html>
+
+<!B>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linking Within the Same File</title>
+</head>
+<body>
+    <a id="top">Top Region</a>
+    <br>
+    <a href="#bottom">Go to Bottom</a>
+    
+    <!-- Add large textual content to create scroll effect -->
+    <p style="margin-top: 1000px;"></p>  
+
+    <a id="bottom">Bottom Region</a>
+    <br>
+    <a href="#top">Go to Top</a>
 </body>
 </html>
