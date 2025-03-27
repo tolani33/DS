@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Words Without split()</title>
+    <script>
+        var str = prompt("Enter a sentence:", "").trim();
+        var count = 0;
+
+        if (str.length > 0) {
+            for (var i = 0; i < str.length - 1; i++) {
+                if (str.charAt(i) === " " && str.charAt(i + 1) !== " ") {
+                    count++;
+                }
+            }
+            document.write("<h2>Number of words: " + (count + 1) + "</h2>");
+        } else {
+            document.write("<h2>Please enter a valid sentence.</h2>");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
