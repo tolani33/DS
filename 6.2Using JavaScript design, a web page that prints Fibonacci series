@@ -1,0 +1,28 @@
+<! Fibonacci>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Series Demo</title>
+    <script>
+        let n = parseInt(prompt("Enter limit for Fibonacci series:", ""));
+        
+        if (!isNaN(n) && n > 0) {
+            let a = 0, b = 1, c;
+            document.write("<h2>Fibonacci Series:</h2>");
+            document.write(a + " " + b + " ");
+
+            for (let i = 2; i < n; i++) {
+                c = a + b;
+                document.write(c + " ");
+                a = b;
+                b = c;
+            }
+        } else {
+            document.write("<h2>Please enter a valid positive number.</h2>");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
