@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Different Text Formatting Tags</title> 
+</head> 
+<body> 
+
+    <h1>Heading 1</h1> 
+    <h2>Heading 2</h2> 
+
+    <p>The Gardener poem says,...</p> 
+
+    <blockquote>
+        Silly gardener! Summer goes  
+        and winter comes with pinching.  
+        When in the garden bare and brown,  
+        you must lay your barrow down.  
+    </blockquote> 
+
+    <b><i>Hello friends</i></b><br> 
+
+    H<sub>2</sub>SO<sub>4</sub><br> 
+    (a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup><br> 
+    H<sub>2</sub>O<br> 
+
+    <kbd>Hello</kbd><br> 
+    <code>Hello</code><br> 
+    <samp>Hello</samp><br> 
+
+    <pre>
+Hello friends, how are you?  
+I am fine, and I hope you are also fine.  
+    </pre> 
+
+</body> 
+</html>
