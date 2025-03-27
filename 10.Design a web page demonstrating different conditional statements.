@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conditional Statements</title>
+    <script>
+        var age = parseInt(prompt("Enter your age:", ""));
+        if (!isNaN(age) && age > 18) {
+            document.write("<b>Qualifies for driving</b>");
+        } else {
+            document.write("<b>Does not qualify for driving</b>");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
