@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ImageMap</title>
+</head>
+<body>
+
+    <img src="face.png" usemap="#m1" alt="Image with clickable areas">
+
+    <map name="m1">
+        <area shape="poly" coords="355,367,390,262,424,367" href="first.html" alt="Polygon Area">
+        <area shape="circle" coords="305,216,44" href="one.html" alt="Circle One">
+        <area shape="circle" coords="496,213,38" href="two.html" alt="Circle Two">
+        <area shape="rect" coords="278,407,473,443" href="three.html" alt="Rectangle Area">
+    </map>
+
+</body>
+</html>
