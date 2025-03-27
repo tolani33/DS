@@ -1,0 +1,23 @@
+<!factorial>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Demo</title>
+    <script>
+        let x = parseInt(prompt("Enter a number:", ""));
+        let fact = 1;
+
+        if (!isNaN(x) && x >= 0) {
+            for (let i = 1; i <= x; i++) {
+                fact *= i;
+            }
+            document.write(`<h1>Factorial of ${x} is: ${fact}</h1>`);
+        } else {
+            document.write("<h1>Please enter a valid non-negative number.</h1>");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
